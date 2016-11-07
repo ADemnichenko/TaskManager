@@ -60,7 +60,7 @@
             </div>
             <ul>
         {%for task in tasks_open%}
-                <div id = "divide_1">
+                <div id = "divide_1" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
                 </div>
                  <div id = "control_image">
                       <a href="{% url 'task_del' pk=task.pk%}">
