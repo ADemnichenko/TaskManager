@@ -2,9 +2,9 @@
 <html>
     <head>
          <title>Task Manager</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/TaskManager.css' %}">
+        <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'CSS/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'CSS/TaskManager.css' %}">
        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
        <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
     </head>
@@ -13,7 +13,7 @@
     <!----------------TITLE----------------------->
         <div class = "title">
             <div id = "title_img">
-                <img src ="{% static 'IMG/bwf_logo.png'%}" width = "200px">
+                <img src ="{% static 'IMG/bwf_logo.png' %}" width = "200px">
             </div>
             <div id="bwf_title">
                 <H1>Task Manager</H1>
@@ -104,7 +104,7 @@
             </div>
             <ul>
         {%for task in task_in_progres%}
-                <div id = "divide_2">
+                <div id = "divide_2" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
                 </div>
                 <div id = "control_image">
                       <a href="{% url 'task_del' pk=task.pk%}">
@@ -144,7 +144,7 @@
             </div>
             <ul>
         {%for task in tasks_closed%}
-                <div id = "divide_3">
+                <div id = "divide_3" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
                 </div>
                 <div id = "control_image">
                      <a href="{% url 'task_del' pk=task.pk%}">
