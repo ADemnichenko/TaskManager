@@ -1,3 +1,4 @@
+{% load staticfiles %}
 /*--------MAIN--------------*/
 .main{
     width:100%;
@@ -131,7 +132,7 @@ ul{
 }
 #divide_1, #divide_2, #divide_3{
     height:10px;
-    background-image: url("/static/IMG/razdelitel_about.png");
+    background-image: url("../IMG/razdelitel_about.png");
     background-repeat: repeat-x;
     background-size: 20px;
 }

@@ -13,7 +13,7 @@
     <!----------------TITLE----------------------->
         <div class = "title">
             <div id = "title_img">
-                <img src ="static/IMG/bwf_logo.png" width = "200px">
+                <img src ="{% static 'IMG/bwf_logo.png'%}" width = "200px">
             </div>
             <div id="bwf_title">
                 <H1>Task Manager</H1>
@@ -38,13 +38,13 @@
             </div>
             <div class = "acounts">
                 <a href="">
-                    <img src="static/IMG/send_statistic.png" width = "50px">
+                    <img src= "{% static 'IMG/send_statistic.png' %}" width = "50px">
                 </a>
                 <a href="">
-                    <img src="static/IMG/personal_acount.png" width = "50px">
+                    <img src="{% static 'IMG/personal_acount.png' %}" width = "50px">
                 </a>
                 <a href="/admin">
-                    <img src="static/IMG/admin_acount.png" width = "50px">
+                    <img src="{% static 'IMG/admin_acount.png' %}" width = "50px">
                 </a>
             </div>
         </div>
@@ -64,17 +64,17 @@
                 </div>
                  <div id = "control_image">
                       <a href="{% url 'task_del' pk=task.pk%}">
-                        <img src="static/IMG/delete.png" width="30px">
+                        <img src="{% static 'IMG/delete.png' %}" width="30px">
                      </a>
                  </div>
                 <div id = "control_image">
                     <a href="{% url 'task_complete' pk=task.pk%}">
-                        <img src="static/IMG/complete.png" width="30px">
+                        <img src="{% static 'IMG/complete.png' %}" width="30px">
                     </a>
                 </div>
                 <div id = "control_image">
                     <a href="{% url 'task_start' pk=task.pk%}">
-                       <img src="static/IMG/start.png" width="30px">
+                       <img src="{% static 'IMG/start.png' %}" width="30px">
                     </a>
                 </div>
                 {%if task.task_prioritet == prioritet_hot %}
@@ -108,17 +108,17 @@
                 </div>
                 <div id = "control_image">
                       <a href="{% url 'task_del' pk=task.pk%}">
-                        <img src="static/IMG/delete.png" width="30px">
+                        <img src="{% static 'IMG/delete.png' %}" width="30px">
                      </a>
                  </div>
                 <div id = "control_image">
                     <a href="{% url 'task_complete' pk=task.pk%}">
-                        <img src="static/IMG/complete.png" width="30px">
+                        <img src="{% static 'IMG/complete.png' %}" width="30px">
                     </a>
                 </div>
                 <div id = "control_image">
                     <a href="{% url 'task_start' pk=task.pk%}">
-                       <img src="static/IMG/start.png" width="30px">
+                       <img src="{% static 'IMG/start.png' %}" width="30px">
                     </a>
                 </div>
                 <div class = "li_2">
@@ -148,17 +148,17 @@
                 </div>
                 <div id = "control_image">
                      <a href="{% url 'task_del' pk=task.pk%}">
-                        <img src="static/IMG/delete.png" width="30px">
+                        <img src="{% static 'IMG/delete.png' %}" width="30px">
                      </a>
                  </div>
                 <div id = "control_image">
                     <a href="{% url 'task_complete' pk=task.pk%}">
-                        <img src="static/IMG/complete.png" width="30px">
+                        <img src="{% static 'IMG/complete.png' %}" width="30px">
                     </a>
                 </div>
                 <div id = "control_image">
                     <a href="{% url 'task_start' pk=task.pk%}">
-                       <img src="static/IMG/start.png" width="30px">
+                       <img src="{% static 'IMG/start.png' %}" width="30px">
                     </a>
                 </div>
                 <div class = "li_3">
