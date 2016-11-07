@@ -1,0 +1,142 @@
+/*--------MAIN--------------*/
+.main{
+    width:100%;
+
+}
+body {
+    background-color: lightgray;
+}
+li{
+    font-size: 20px;
+    list-style: none;
+    font-family: 'Russo One', sans-serif;
+}
+ul{
+    padding: 0 0 0 0;
+}
+/*-----------------*/
+
+/*-------TITLE----------*/
+.acounts{
+    width: 160px;
+    height:50px;
+    float:right;
+    margin:10px;
+}
+#s_b{
+    margin-left:5px;
+    width:150px;
+    height:30px;
+    float:left;
+    font-size: 20px;
+    color: dimgray;
+    font-family: 'Pacifico', cursive;
+    vertical-align: center;
+}
+#stat_box{
+    float:left;
+    color: dimgray;
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    width:30px;
+    height:30px;
+    background-color: lightgray;
+     -moz-border-radius: 50px;
+     -webkit-border-radius: 50px;
+     border-radius: 50px;
+    box-shadow:inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), inset 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.task_statistic{
+    width:200px;
+    height:150px;
+    margin-left:250px;
+    float:left;
+}
+#statistic_title{
+    margin-top:5px;
+    width:200px;
+    height: 30px;
+}
+.title{
+    width: 100%;
+    height:150px;
+}
+#bwf_title{
+    margin-left:200px;
+    margin-top: 30px;
+    position: absolute;
+    width:auto;
+    float:left;
+    color: dimgray;
+    font-family: 'Pacifico', cursive;
+    vertical-align: center;
+}
+#title_img{
+    margin-left:20px;
+    margin-top:30px;
+    float:left;
+}
+
+
+
+
+
+/*-------CONTENT----------*/
+.content{
+    color: #575757;
+    width: 1620px;
+    margin: 0 auto;
+    background-repeat:repeat;
+    background-size: 130px;
+}
+.krug {
+    float:left;
+    margin:0 0 0 35px;
+    width:30px;
+    height:30px;
+    background-color: lightgray;
+     -moz-border-radius: 50px;
+     -webkit-border-radius: 50px;
+     border-radius: 50px;
+    box-shadow:inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), inset 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+.circle{
+    width:100%;
+    height:20px;
+    margin-bottom: 20px;
+}
+#task_list_1, #task_list_2, #task_list_3{
+    float:left;
+    margin: 0 20px 0 20px;
+    width:500px;
+    padding-top:20px;
+    padding-bottom:5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#description_1, #description_2, #description_3{
+    font-style: italic;
+    font-size: 15px;
+    padding-left:20px;
+    width: 368px;
+    font-family: 'Russo One', sans-serif;
+
+}
+#name_1, #name_2, #name_3{
+    width: 100%;
+     font-family: 'Russo One', sans-serif;
+ }
+.li_1, .li_2, .li_3{
+    width:auto;
+    padding:20px;
+}
+#divide_1, #divide_2, #divide_3{
+    height:10px;
+    background-image: url("/static/IMG/razdelitel_about.png");
+    background-repeat: repeat-x;
+    background-size: 20px;
+}
+#control_image{
+    float:right;
+    margin: 5px;
+}
+/*-----------------*/
