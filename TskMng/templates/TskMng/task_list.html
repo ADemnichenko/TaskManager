@@ -9,7 +9,7 @@
        <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
     </head>
     <body>
-    <div class = "main">
+
     <!----------------TITLE----------------------->
         <div class = "title">
             <div id = "title_img">
@@ -54,45 +54,48 @@
             <div class = "circle">
                 {%for x in circle_count%}
                 <div class="krug">
-                    <!--<img src  = "static/IMG/circle.png" width = "30px">-->
                 </div>
                 {%endfor%}
             </div>
-            <ul>
-        {%for task in tasks_open%}
-                <div id = "divide_1" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
-                </div>
-                 <div id = "control_image">
-                      <a href="{% url 'task_del' pk=task.pk%}">
-                        <img src="{% static 'IMG/delete.png' %}" width="30px">
-                     </a>
-                 </div>
-                <div id = "control_image">
-                    <a href="{% url 'task_complete' pk=task.pk%}">
-                        <img src="{% static 'IMG/complete.png' %}" width="30px">
-                    </a>
-                </div>
-                <div id = "control_image">
-                    <a href="{% url 'task_start' pk=task.pk%}">
-                       <img src="{% static 'IMG/start.png' %}" width="30px">
-                    </a>
-                </div>
-                {%if task.task_prioritet == prioritet_hot %}
-                        <div class = "li_1" style = background-color:#E67864>
-                    {%else%}
+            <div class="parent">
+                    <ul>
+                    {%for task in tasks_open%}
+                        <div id = "divide_1" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
+                        </div>
+                         <div id = "control_image">
+                              <a href="{% url 'task_del' pk=task.pk%}">
+                                <img src="{% static 'IMG/delete.png' %}" width="30px">
+                             </a>
+                         </div>
+                        <div id = "control_image">
+                            <a href="{% url 'task_complete' pk=task.pk%}">
+                                <img src="{% static 'IMG/complete.png' %}" width="30px">
+                            </a>
+                        </div>
+                        <div id = "control_image">
+                            <a href="{% url 'task_start' pk=task.pk%}">
+                               <img src="{% static 'IMG/start.png' %}" width="30px">
+                            </a>
+                        </div>
+                        {%if task.task_prioritet == prioritet_hot %}
+                            <div class = "li_1" style = background-color:#E67864>
+                        {%else%}
                             <div class = "li_1">
-                                {%endif%}
-                    <li id="task_1">
-                        <div id = "name_1">
-                            {{forloop.counter}}. {{task}}
+                        {%endif%}
+                                <li id="task_1">
+                                    <div id = "name_1">
+                                        {{forloop.counter}}. {{task}}
+                                    </div>
+                                    <div id = "description_1">
+                                        <p>{{task.task_description}}</p>
+                                    </div>
+                                </li>
+                            </div>
+                    {%endfor%}
+                        <div id = "divide_1" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
                         </div>
-                        <div id = "description_1">
-                            <p>{{task.task_description}}</p>
-                        </div>
-                    </li>
-                </div>
-        {%endfor%}
-            </ul>
+                    </ul>
+            </div>
         </div>
         <div id = "task_list_2" style="background-color: lightblue">
             <div class = "circle">
@@ -102,6 +105,7 @@
                 </div>
                 {%endfor%}
             </div>
+        <div class="parent">
             <ul>
         {%for task in task_in_progres%}
                 <div id = "divide_2" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
@@ -132,7 +136,10 @@
                     </li>
                 </div>
         {%endfor%}
+                <div id = "divide_2" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
+                </div>
             </ul>
+        </div>
         </div>
         <div id = "task_list_3" style="background-color: #82cc8b">
             <div class = "circle">
@@ -142,6 +149,7 @@
                 </div>
                 {%endfor%}
             </div>
+        <div class="parent">
             <ul>
         {%for task in tasks_closed%}
                 <div id = "divide_3" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
@@ -172,9 +180,12 @@
                     </li>
                 </div>
         {%endfor%}
+                <div id = "divide_3" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
+                </div>
             </ul>
         </div>
-    </div>
+        </div>
+
     </div>
     </body>
 </html>

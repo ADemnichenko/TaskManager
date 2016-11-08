@@ -1,6 +1,5 @@
 from django.conf.urls import url
 from . import views
-
 urlpatterns = [
    url(r'^$', views.task_list, name='task_list'),
    url(r'^delete/(?P<pk>[0-9]+)/$', views.task_del, name='task_del'),

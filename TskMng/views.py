@@ -1,31 +1,33 @@
+import string
+import random
 from django.shortcuts import render
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
-import string
 from .models import Task, Progress, Prioritet, Clases
-import random
+from django.http import HttpResponseRedirect
+from django.contrib import admin
 # Create your views here.
 def task_list(request):
-    circle_count = range(7)
-    counter = 1
-    flag_open = Progress.objects.get(flag = 'open')
-    flag_closed = Progress.objects.get(flag='closed')
-    flag_in_process = Progress.objects.get(flag='in process')
-    prioritet_hot = Prioritet.objects.get(prioritet='hot')
-    user =  User.objects.get(username = "Admin")
-    if request.user == user:
-        tasks_open = Task.objects.filter(task_progress=flag_open)
-        tasks_prioritet = Task.objects.filter(task_progress=flag_open, task_prioritet=prioritet_hot)
-        tasks_closed = Task.objects.filter(task_progress=flag_closed)
-        task_in_progres = Task.objects.filter(task_progress=flag_in_process)
-    else:
-        tasks_open = Task.objects.filter(task_progress = flag_open, task_author = request.user)
-        tasks_prioritet = Task.objects.filter(task_progress = flag_open, task_prioritet=prioritet_hot, task_author=request.user)
-        tasks_closed = Task.objects.filter(task_progress = flag_closed, task_author = request.user)
-        task_in_progres = Task.objects.filter(task_progress = flag_in_process, task_author = request.user)
-    return render(request, 'TskMng/task_list.html', {'prioritet_hot':prioritet_hot,'tasks_prioritet': tasks_prioritet,'tasks_open': tasks_open,'tasks_closed':tasks_closed, 'task_in_progres':task_in_progres, 'circle_count': circle_count, 'counter':counter})
+        circle_count = range(7)
+        counter = 1
+        flag_open = Progress.objects.get(flag = 'open')
+        flag_closed = Progress.objects.get(flag='closed')
+        flag_in_process = Progress.objects.get(flag='in process')
+        prioritet_hot = Prioritet.objects.get(prioritet='hot')
+        user =  User.objects.get(username = "Admin")
+        if request.user == user:
+            tasks_open = Task.objects.filter(task_progress=flag_open)
+            tasks_prioritet = Task.objects.filter(task_progress=flag_open, task_prioritet=prioritet_hot)
+            tasks_closed = Task.objects.filter(task_progress=flag_closed)
+            task_in_progres = Task.objects.filter(task_progress=flag_in_process)
+        else:
+            tasks_open = Task.objects.filter(task_progress = flag_open, task_author = request.user)
+            tasks_prioritet = Task.objects.filter(task_progress = flag_open, task_prioritet=prioritet_hot, task_author=request.user)
+            tasks_closed = Task.objects.filter(task_progress = flag_closed, task_author = request.user)
+            task_in_progres = Task.objects.filter(task_progress = flag_in_process, task_author = request.user)
+        return render(request, 'TskMng/task_list.html', {'prioritet_hot':prioritet_hot,'tasks_prioritet': tasks_prioritet,'tasks_open': tasks_open,'tasks_closed':tasks_closed, 'task_in_progres':task_in_progres, 'circle_count': circle_count, 'counter':counter})
 
 def task_del(request, pk):
     task_delete = get_object_or_404(Task, pk=pk)

@@ -8,7 +8,7 @@ body {
     background-color: lightgray;
 }
 li{
-    font-size: 20px;
+    font-size: 15px;
     list-style: none;
     font-family: 'Russo One', sans-serif;
 }
@@ -77,10 +77,20 @@ ul{
     margin-top:30px;
     float:left;
 }
+.parent {
+    width:100%;
+    height: 95%;
+  display: block;
+  position: relative;
+  overflow: scroll;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
 
-
-
-
+}
+/* хром, сафари */
+.parent::-webkit-scrollbar {
+    width: 0;
+}
 
 /*-------CONTENT----------*/
 .content{
@@ -110,13 +120,13 @@ ul{
     float:left;
     margin: 0 20px 0 20px;
     width:500px;
+    height:80%;
     padding-top:20px;
-    padding-bottom:5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #description_1, #description_2, #description_3{
     font-style: italic;
-    font-size: 15px;
+    font-size: 10px;
     padding-left:20px;
     width: 368px;
     font-family: 'Russo One', sans-serif;
