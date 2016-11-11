@@ -1,4 +1,5 @@
 {% load staticfiles %}
+
 <html>
     <head>
          <title>Task Manager</title>
@@ -9,7 +10,6 @@
        <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
     </head>
     <body>
-
     <!----------------TITLE----------------------->
         <div class = "title">
             <div id = "title_img">
@@ -21,19 +21,19 @@
             <div class="task_statistic">
                  <div id = "statistic_title">
                     <div id = "stat_box" style = background-color:#FAFAD2></div>
-                    <div id = "s_b">open / {{tasks_open.count}}</div>
+                    <div id = "s_b">open / {{open.count}}</div>
                  </div>
                  <div id = "statistic_title">
                     <div id = "stat_box" style = background-color:#ADD8E6></div>
-                    <div id = "s_b">in process / {{task_in_progres.count}}</div>
+                    <div id = "s_b">in process / {{in_progres.count}}</div>
                  </div>
                  <div id = "statistic_title">
                     <div id = "stat_box" style = background-color:#82CC8B></div>
-                    <div id = "s_b">complete / {{tasks_closed.count}}</div>
+                    <div id = "s_b">complete / {{closed.count}}</div>
                  </div>
                  <div id = "statistic_title">
                      <div id = "stat_box" style = background-color:#E67864></div>
-                     <div id = "s_b">prioritet / {{tasks_prioritet.count}}</div>
+                     <div id = "s_b">prioritet / {{prioritet.count}}</div>
                  </div>
             </div>
             <div class = "acounts">
@@ -59,7 +59,7 @@
             </div>
             <div class="parent">
                     <ul>
-                    {%for task in tasks_open%}
+                    {%for task in open%}
                         <div id = "divide_1" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
                         </div>
                          <div id = "control_image">
@@ -77,7 +77,7 @@
                                <img src="{% static 'IMG/start.png' %}" width="30px">
                             </a>
                         </div>
-                        {%if task.task_prioritet == prioritet_hot %}
+                        {%if task.task_prioritet == hot %}
                             <div class = "li_1" style = background-color:#E67864>
                         {%else%}
                             <div class = "li_1">
@@ -101,13 +101,12 @@
             <div class = "circle">
                 {%for x in circle_count%}
                 <div class="krug">
-                    <!--<img src  = "static/IMG/circle.png" width = "30px">-->
                 </div>
                 {%endfor%}
             </div>
         <div class="parent">
             <ul>
-        {%for task in task_in_progres%}
+        {%for task in in_progres%}
                 <div id = "divide_2" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
                 </div>
                 <div id = "control_image">
@@ -145,13 +144,12 @@
             <div class = "circle">
                 {%for x in circle_count%}
                 <div class="krug">
-                   <!-- <img src  = "static/IMG/circle.png" width = "30px">-->
                 </div>
                 {%endfor%}
             </div>
         <div class="parent">
             <ul>
-        {%for task in tasks_closed%}
+        {%for task in closed%}
                 <div id = "divide_3" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
                 </div>
                 <div id = "control_image">
@@ -185,7 +183,6 @@
             </ul>
         </div>
         </div>
-
     </div>
     </body>
 </html>
