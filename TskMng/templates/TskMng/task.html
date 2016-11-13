@@ -1,0 +1,34 @@
+{% load staticfiles %}
+{% load my_tags %}
+<div id = "divide" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
+</div>
+<div class = "li">
+<li id="task">
+{%if task.task_prioritet == hot %}
+    <div id = "tag" style = background-color:#E67864></div>
+{% endif %}
+    <div id = "author"> | {{ task.task_author }} |</div>
+    <div class = "name">
+        {{forloop.counter}}. {{task}}
+    </div>
+    <div class = "description">
+        <div class = "descr_text">{{task.task_description}}</div>
+        <div class = "info">
+            <div class = "date">
+                <p>Publish Date: {{task.task_open}}</p>
+                <p>Start Date: {{task.task_in_process}}</p>
+                <p>Complete Date: {{task.task_closed}}</p>
+            </div>
+            <div class="controls">
+                {% for image in controls_list %}
+                <div id = "control_image">
+                    <a href="{% url image pk=task.pk%}">
+                        <img src="{% static ""%}IMG/{{image}}.png" width="20px" title="{{image|split:'_'}}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</li>
+</div>

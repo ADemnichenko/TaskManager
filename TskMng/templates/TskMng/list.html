@@ -1,0 +1,36 @@
+{% load staticfiles %}
+{% for list in task_lists %}
+    {% if list == 'open'%}
+        <div id = "task_list" style="background-color: lightgoldenrodyellow">
+    {% elif list == 'in_process' %}
+        <div id = "task_list" style="background-color: lightblue">
+    {% elif list == 'closed' %}
+        <div id = "task_list" style="background-color: #82cc8b">
+    {% endif %}
+            <div class = "circle">
+                {%for x in circle_count%}
+                    <div class="krug">
+                    </div>
+                {%endfor%}
+            </div>
+            <div class="parent">
+                    <ul>
+                        {% if list == 'open'%}
+                            {%for task in open%}
+                                {% include 'TskMng/task.html' %}
+                            {%endfor%}
+                        {% elif list == 'closed' %}
+                             {%for task in closed%}
+                                {% include 'TskMng/task.html' %}
+                            {%endfor%}
+                        {% elif list == 'in_process' %}
+                             {%for task in in_process%}
+                                {% include 'TskMng/task.html' %}
+                            {%endfor%}
+                        {% endif %}
+                        <div id = "divide" style = "background-image: url('{% static 'IMG/razdelitel_about.png' %}'); background-repeat: repeat-x;">
+                        </div>
+                    </ul>
+            </div>
+        </div>
+{% endfor %}

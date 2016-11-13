@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<html>
+    <head>
+         <title>Task Manager</title>
+        <link rel="stylesheet" href="{% static 'CSS/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'CSS/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'CSS/TaskManager.css' %}">
+       <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <!--<script>
+            $(function(){
+    		    $('.name').click(function(){
+        		    $(this).next('.description').stop().slideToggle();
+                    });
+			    });
+        </script>-->
+        <script>
+            $(function(){
+                $('.name .description').hide();
+                $('.name').on('click', function(event) {
+                  event.preventDefault();
+                  $('.name').not(this).next().slideUp(500);
+                  $(this).next().slideToggle(500);
+                });
+            });
+        </script>
+    </head>
+    <body>
+    <!----------------TITLE----------------------->
+        <div class = "title">
+            <div id = "title_img">
+                <img src ="{% static 'IMG/bwf_logo.png' %}" width = "200px">
+            </div>
+            <div id="bwf_title">
+                <H1>Task Manager</H1>
+            </div>
+            <div class="task_statistic">
+                 <div id = "statistic_title">
+                    <div id = "stat_box" style = background-color:#FAFAD2></div>
+                    <div id = "s_b">open / {{open.count}}</div>
+                 </div>
+                 <div id = "statistic_title">
+                    <div id = "stat_box" style = background-color:#ADD8E6></div>
+                    <div id = "s_b">in process / {{in_process.count}}</div>
+                 </div>
+                 <div id = "statistic_title">
+                    <div id = "stat_box" style = background-color:#82CC8B></div>
+                    <div id = "s_b">complete / {{closed.count}}</div>
+                 </div>
+                 <div id = "statistic_title">
+                     <div id = "stat_box" style = background-color:#E67864></div>
+                     <div id = "s_b">prioritet / {{prioritet.count}}</div>
+                 </div>
+            </div>
+            <div class = "acounts">
+                <a href="">
+                    <img src= "{% static 'IMG/send_statistic.png' %}" width = "50px">
+                </a>
+                <a href="">
+                    <img src="{% static 'IMG/personal_acount.png' %}" width = "50px">
+                </a>
+                <a href="/admin">
+                    <img src="{% static 'IMG/admin_acount.png' %}" width = "50px">
+                </a>
+            </div>
+        </div>
+    <!--------------------------------------------->
+    <div class = "content">
+        {% include 'TskMng/list.html' %}
+    </div>
+    </body>
+</html>
